@@ -40,7 +40,7 @@ jobs:
         target: prod
         platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
         push: ${{ github.event_name != 'pull_request' }}
-        tag: ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:$(date +%s)
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:$(date +%s)
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
