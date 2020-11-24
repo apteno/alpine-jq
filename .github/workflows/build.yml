@@ -7,6 +7,7 @@ on:
     branches: [ main ]
   schedule:
     - cron: "0 0 * * *"
+    - cron: "0 12 * * *"
 
 jobs:
   build:
@@ -46,8 +47,8 @@ jobs:
         pull: true
         no-cache: true
         tags: |
-          ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:latest
           ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:${{ steps.date.outputs.date }}
+          ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:latest
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
