@@ -1,3 +1,5 @@
 # alpine-jq
 
-Basic Alpine container with curl, wget and jq
+Daily build of alpine image with curl, wget and jq
+
+Images on [Docker Hub](https://hub.docker.com/r/apteno/alpine-jq)
