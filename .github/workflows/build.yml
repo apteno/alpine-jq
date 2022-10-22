@@ -46,8 +46,8 @@ jobs:
         pull: true
         no-cache: true
         tags: |
-          ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:${{ steps.date.outputs.date }}
-          ${{ secrets.DOCKER_HUB_USERNAME }}/alpine-jq:latest
+          apteno/alpine-jq:${{ steps.date.outputs.date }}
+          apteno/alpine-jq:latest
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
