@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Wave</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      font-family: sans-serif;
+    }
+    #wave span {
+      display: inline-block;
+      color: #fff;
+      font-size: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="wave"></div>
+  <script>
+    const text = "Hello World";
+    const container = document.getElementById("wave");
+    [...text].forEach(ch => {
+      const s = document.createElement("span");
+      s.textContent = ch === " " ? " " : ch;
+      container.appendChild(s);
+    });
+    const spans = container.querySelectorAll("span");
+    let t = 0;
+    function animate() {
+      spans.forEach((s, i) => {
+        s.style.transform = `translateY(${Math.sin(t + i * 0.5) * 20}px)`;
+      });
+      t += 0.1;
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
