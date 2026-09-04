@@ -22,7 +22,7 @@ jobs:
       run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v4.2.0
+      uses: docker/setup-qemu-action@v4.3.0
       with:
         platforms: all
 
